@@ -1,0 +1,24 @@
+# 1. Set identity (only once)
+git config --global user.name "Saksham Bansal"
+git config --global user.email "your-github-email@example.com"
+
+# 2. Create .gitattributes to enforce CRLF (you said CRLF)
+echo "* text eol=crlf" > .gitattributes
+
+# 3. Create .gitignore for Python/venv etc. (paste into file or run this)
+@"
+venv/
+.venv/
+__MACOSX/
+.DS_Store
+*.pyc
+__pycache__/
+.env
+.vscode/
+"@ > .gitignore
+
+# 4. Stage files (this will respect .gitignore)
+git add .
+
+# 5. Commit
+git commit -m "Initial commit — add project, .gitattributes and .gitignore"
